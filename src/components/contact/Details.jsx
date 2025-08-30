@@ -1,5 +1,5 @@
 
-function Details({user}) {
+function Details({user,removeContact}) {
     
     return (
         <>
@@ -8,10 +8,11 @@ function Details({user}) {
             <div>
                 <div><p>name :{ user.name}  </p>
                 <p>name : {user.email}</p>
-                <button>delete</button>
+                <button onClick={()=>removeContact(user.id)}> delete</button>
                 </div>
             </div>
         </>
+        
     );
 }
 

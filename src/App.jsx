@@ -14,18 +14,28 @@ useEffect(()=>{
 },[])
 
 function handleAdd(contact){
-  // const updatedUsers = ([...users, contact]);
-    setUser([...users,contact]);
-  localStorage.setItem("users",JSON.stringify(updatedUsers));
 
+ const newUser = {id : Date.now(),...contact}
+  const updatedUsers = ([...users,newUser]);
+  localStorage.setItem("users",JSON.stringify(updatedUsers));
+  setUser(updatedUsers);
 }
 
-// 
+// delete 
+function handleDelete(id){
+ const filteredUser = users.filter((user)=>{
+  return user.id != id
+ })
+
+ setUser(filteredUser)
+   localStorage.setItem("users",JSON.stringify(filteredUser));
+}
+
   return (
     <>
       <Header />
       <Add handleAdd={handleAdd}/>
-      <List users={users}/>
+      <List users={users} handleDelete={handleDelete}/>
     </>
   )
 }

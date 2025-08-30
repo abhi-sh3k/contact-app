@@ -1,7 +1,12 @@
 import Details from "./Details";
 
-function List({users}) {
-    
+function List({users,handleDelete}) {
+  
+    function removeContact(contactID){
+        handleDelete(contactID);
+        
+        
+    }
     return (
         <>
             <h3>List</h3>
@@ -10,7 +15,7 @@ function List({users}) {
                
             {users.map((user)=>(
                 
-                <Details user={user}/>
+                <Details user={user} removeContact={removeContact} key={user.id} />
             )
             )}
             </div>
