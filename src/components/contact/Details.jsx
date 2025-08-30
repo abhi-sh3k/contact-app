@@ -1,8 +1,16 @@
 
-function Details() {
+function Details({user}) {
+    
     return (
         <>
-            <h1>Details</h1>
+            <h4>Details</h4>
+
+            <div>
+                <div><p>name :{ user.name}  </p>
+                <p>name : {user.email}</p>
+                <button>delete</button>
+                </div>
+            </div>
         </>
     );
 }

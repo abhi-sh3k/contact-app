@@ -2,7 +2,7 @@
 function Header() {
     return (
         <>
-            <h1>Contact Manager</h1>
+            <h4>Contact Manager</h4>
         </>
     );
 }
